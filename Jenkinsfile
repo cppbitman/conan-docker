@@ -1,10 +1,13 @@
 pipeline {
   agent {
-    image 'lasote/conangcc7'
-    args '-it --rm -v/tmp/conan:/home/conan/project'
+    docker {
+      image 'lasote/conangcc7'
+      label 'conan-docker-image'
+      args '-it --rm -v/tmp/conan:/home/conan/project'
+    }
   }
   stages {
-    stage {
+    stage('Build') {
       steps {
         sh 'git --version'
         sh 'pip install conan --upgrade'
