@@ -10,12 +10,8 @@ pipeline {
       steps {
         sh 'git --version'
         sh 'sudo pip install conan --upgrade'
-        sh 'pwd'
-        sh 'git clone https://github.com/conan-community/conan-openssl'
-        sh 'pwd'
-        sh 'cd conan-openssl'
-        sh 'pwd'
-        sh 'conan create . user/channel'
+        sh '''pwd && git clone https://github.com/conan-community/conan-openssl &&
+        cd conan-openssl && pwd && conan create . user/channel'''
       }
     }
   }
