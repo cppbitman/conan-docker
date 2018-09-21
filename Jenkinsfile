@@ -1,7 +1,6 @@
 pipeline {
   agent {
     image 'lasote/conangcc7'
-    label 'conan-docker-image'
     args '-it --rm -v/tmp/conan:/home/conan/project'
   }
   stages {
