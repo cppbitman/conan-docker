@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'lasote/conangcc7'
-      args '-it --rm'
+      args '-it'
     }
   }
   stages {
